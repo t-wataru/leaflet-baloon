@@ -1,0 +1,38 @@
+.balloon_marker {
+	position: relative;
+	background: #88b7d5;
+	border: 2px solid #FFF;
+	font: medium "Helvetica Neue", Arial, Helvetica, sans-serif;
+	text-align: center;
+	padding: 0.5em 1em;
+	float: left;
+	width: auto!important;
+	height: 1em!important;
+
+	/* 吹き出しの先にセンタリング */
+	margin-top: calc(-1 * (1em + 2 * 0.5em + 2 * 1px) - (1em + 2px))!important;
+	margin-left: calc(-50%)!important;
+}
+.balloon_marker:after, .balloon_marker:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.balloon_marker:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: #88b7d5;
+	border-width: 1em;
+	margin-left: -1em;
+}
+.balloon_marker:before {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #FFF;
+	border-width: calc(1em + 2px);
+	margin-left: calc(-1em - 2px);
+}
